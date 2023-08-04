@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Flaask app
+Flask app
 """
 from flask import (
     Flask,
@@ -41,4 +41,4 @@ def index() -> str:
 
 
 if __name__ == "__main__":
-    app.run(port="5000", host-"0.0.0.00", debug=True)
+    app.run(port="5000", host-"0.0.0.0", debug=True)
