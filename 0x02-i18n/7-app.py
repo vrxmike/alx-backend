@@ -1,4 +1,4 @@
-#!/usr/bin env python3
+#!/usr/bin/env python3
 """
 Flask app
 """
@@ -93,7 +93,7 @@ def get_timezone():
         try:
             tzone = g.user.get('timezone')
             return timezone(tzone).zone
-        except pytz.exceptions.UnknownTineZoneError:
+        except pytz.exceptions.UnknownTimeZoneError:
             pass
     dflt = app.config['BABEL_DEFAULT_TIMEZONE']
     return dflt
@@ -108,4 +108,4 @@ def index() -> str:
 
 
 if __name__ == "__main__":
-    app.run(port="5000", host="0.0.0.0', debug=True)
+    app.run(port="5000", host="0.0.0.0", debug=True)
