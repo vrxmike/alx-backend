@@ -42,7 +42,7 @@ users = {
 }
 
 
-df get_user() -> Union[Dict, None]:
+def get_user() -> Union[Dict, None]:
     """
     Returns a user dictionary or None if ID value can't be found
     or if 'login_as' URL parameter was not found
@@ -94,7 +94,7 @@ def get_timezone():
     if tzone:
         try:
             return timezone(tzone).zone
-        except pytz.exceptions.UnkonwnTimeZoneError:
+        except pytz.exceptions.UnknownTimeZoneError:
             pass
     if g.user:
         try:
@@ -106,7 +106,7 @@ def get_timezone():
     return dflt
 
 
-@app.route('/'. strict_slashes=False)
+@app.route('/', strict_slashes=False)
 def index() -> str:
     """
     Handles / route
