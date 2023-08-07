@@ -39,7 +39,7 @@ def get_user():
     or if 'login_as' URL parameter was not found
     """
     id = request.args.get('login_as', None)
-    if id is Not None and int(id) in users.keys():
+    if id is not None and int(id) in users.keys():
         return users.get(int(id))
     return None
 
