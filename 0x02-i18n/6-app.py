@@ -53,7 +53,7 @@ def before_request():
     """
     Add user to flask.g if user is found
     """
-    user = get_user
+    user = get_user()
     g.user = user
 
 
@@ -66,7 +66,7 @@ def get_locale():
     if loc in app.config['LANGUAGES']:
         return loc
     if g.user:
-        loc = g.user.et('locale')
+        loc = g.user.get('locale')
         if loc and loc in app.config['LANGUAGES']:
             return loc
     loc = request.headers.get('locale', None)
@@ -84,4 +84,4 @@ def index() -> str:
 
 
 if __name__ == "__main__":
-    app.run(port="5000", host="0.0.0.0", degub=True)
+    app.run(port="5000", host="0.0.0.0", debug=True)
