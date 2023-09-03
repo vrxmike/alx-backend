@@ -74,7 +74,7 @@ app.get('/reserve_product/:itemId', async function (req, res) {
   }
 
   let currentStock = await getCurrentReservedStockById(itemId);
-  if (currentStock ! == null) {
+  if (currentStock !== null) {
     currentStock = parseInt(currentStock);
     if (currentStock > 0) {
       reserveStockById(itemId, currentStock - 1);
