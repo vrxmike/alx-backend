@@ -53,7 +53,7 @@ app.get('/reserve_seat', function (req, res) {
       job.on('complete', function () {
       console.log(`Seat reservation job ${job.id} completed`);
       });
-      job.on{'failed', function(error) {
+      job.on('failed', function(error) {
        console.log(`Seat reservation job ${job.id} failed: ${error}`);
       });
     }
