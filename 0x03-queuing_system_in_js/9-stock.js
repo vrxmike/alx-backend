@@ -6,7 +6,7 @@ import { promisify } from 'util';
 const app = express();
 
 //create redis client
-const redisClient = creatClient();
+const redisClient = createClient();
 
 redisClient.on('connect', function() {
   console.log('Redis client connected to the server');
