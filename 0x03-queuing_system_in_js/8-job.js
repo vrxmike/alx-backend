@@ -9,7 +9,7 @@ function createPushNotificationsJobs(jobs, queue) {
     job.on('complete', function() {
       console.log(`Notification job ${job.id} completed`);
     }).on('failed', function(error) {
-      console.log(`Notification job ${job.id} ${progress}% complete`);
+      console.log(`Notification job ${job.id} failed: ${error}`);
     }).on('progress', function(progress, data) {
       console.log(`Notification job ${job.id} ${progress}% complete`);
     });
