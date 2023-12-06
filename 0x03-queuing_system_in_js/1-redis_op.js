@@ -3,7 +3,7 @@ import { createClient, print } from 'redis';
 const client = createClient();
 
 client.on('connect', function() {
-  console.log(`Redis clien connected to the server');
+  console.log('Redis client connected to the server');
 });
 
 client.on('error', function() {
@@ -17,7 +17,7 @@ function setNewSchool(schoolName, value) {
 function displaySchoolValue(schoolName) {
   client.get(schoolName, function(error, result) {
     if (error) {
-      console.log(error);
+      console.log(error);``
       throw error;
     }
     console.log(result);

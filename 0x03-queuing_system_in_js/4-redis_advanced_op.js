@@ -6,7 +6,7 @@ redisClient.on('error', function(error) {
   console.log('Redis client not connected to the server');
 });
 
-redisClient.on('error', functiono(error) {
+redisClient.on('error', function(error) {
   console.log(`Redis client not connected to the server: ${error}`);
 });
 
